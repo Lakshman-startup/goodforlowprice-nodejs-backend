@@ -1,0 +1,79 @@
+#appName{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Comfortaa';
+    font-size: 35px; 
+    color: whitesmoke; 
+    font-weight:bolder;
+}
+#line1{
+    font-family: 'Comfortaa';
+    font-size: 50px; 
+    color: whitesmoke;
+    margin-top: 128px;
+    margin-bottom: 144px;
+    font-weight:bolder;
+}
+
+.get-app-btn{
+  font-size: 32px;
+  padding: 16px;
+  width: 200px;
+  font-family: 'Comfortaa';
+  height: 70;
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 40px;
+  transition-duration: 0.5s;
+}
+
+.get-app-btn:hover{
+  border-radius: 16px;
+  border-color:brown;
+  background-color: brown;
+}
+
+.body{
+  text-align: center;
+  background-image: url("assets/background.jpg");
+  background-size: cover;
+  padding: 16px;
+}
+
+.row{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
+  align-content: space-between;
+  justify-items: center;
+}
+
+.description{
+  font-family: 'Comfortaa';
+  height: 120px;
+  width: 330px;
+  text-align: center;
+  border: 2px solid white;
+}
+strong{
+  font-size: 32px;
+}
+.description-img{
+  border-radius: 8px;
+  width: 80%;
+  height: 280px;
+  box-shadow: 0px 0px 4px 2px grey;
+}
+
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+@media {
+  
+}

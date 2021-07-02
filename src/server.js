@@ -26,6 +26,7 @@ const orderRoutes = require("./routes/order.route");
 const categoryRoutes = require("./routes/category.route");
 const paymentRoutes = require("./routes/payment.route");
 const chatRoutes = require("./routes/chat.route");
+const path = require("path");
 
 // middlewares
 
@@ -47,6 +48,7 @@ if (NODE_ENV === "development") {
 
 // index route
 
+app.use(express.static(path.join(__dirname, "static")));
 app.get("/", (req, res) => {
   res.status(200).json({
     type: "success",
