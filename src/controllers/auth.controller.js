@@ -56,6 +56,7 @@ exports.loginWithUsername = async (req, res, next) => {
       data: {
         token,
         userId: user._id,
+        isAccountVerified: user.isAccountVerified,
       },
     });
   } catch (error) {
@@ -94,7 +95,7 @@ exports.loginWithPhoneOtp = async (req, res, next) => {
     const otp = generateOTP(4);
     // save otp to user collection
     user.phoneOtp = otp;
-    user.isAccountVerified = true;
+
     await user.save();
     // send otp to phone number
     await fast2sms(
@@ -223,6 +224,7 @@ exports.verifyPhoneOtp = async (req, res, next) => {
       data: {
         token,
         userId: user._id,
+        isAccountVerified: user.isAccountVerified,
       },
     });
   } catch (error) {
