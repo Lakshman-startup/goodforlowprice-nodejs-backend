@@ -88,6 +88,7 @@ exports.loginWithPhoneOtp = async (req, res, next) => {
       message: "OTP sended to your registered phone number",
       data: {
         userId: user._id,
+        isAccountVerified: user.isAccountVerified,
       },
     });
 
@@ -154,6 +155,7 @@ exports.createNewUser = async (req, res, next) => {
       message: "Account created OTP sended to mobile number",
       data: {
         userId: user._id,
+        isAccountVerified: user.isAccountVerified,
       },
     });
 
@@ -161,7 +163,7 @@ exports.createNewUser = async (req, res, next) => {
     const otp = generateOTP(4);
     // save otp to user collection
     user.phoneOtp = otp;
-    user.isAccountVerified = true;
+
     await user.save();
     // send otp to phone number
     await fast2sms(
@@ -294,6 +296,7 @@ exports.sendOtp = async (req, res, next) => {
       message: "OTP sended to registered mobile number",
       data: {
         userId: user._id,
+        isAccountVerified: user.isAccountVerified,
       },
     });
 
@@ -301,7 +304,6 @@ exports.sendOtp = async (req, res, next) => {
     const otp = generateOTP(4);
     // save otp to user collection
     user.phoneOtp = otp;
-    user.isAccountVerified = true;
     await user.save();
     // send otp to phone number
     await fast2sms(
